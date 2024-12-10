@@ -1,0 +1,16 @@
+[Mon Dec 02 00:40:01.569744 2024] [ssl:warn] [pid 55522] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Dec 02 00:40:01.570923 2024] [ssl:warn] [pid 55522] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 02 00:40:01.828353 2024] [ssl:warn] [pid 55523] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Dec 02 00:40:01.828394 2024] [ssl:warn] [pid 55523] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 02 00:40:01.828631 2024] [lbmethod_heartbeat:notice] [pid 55523] AH02282: No slotmem from mod_heartmonitor
+[Mon Dec 02 00:40:01.853827 2024] [mpm_prefork:notice] [pid 55523] AH00163: Apache/2.4.56 (Unix) OpenSSL/1.1.1t PHP/8.0.28 mod_perl/2.0.12 Perl/v5.34.1 configured -- resuming normal operations
+[Mon Dec 02 00:40:01.853878 2024] [core:notice] [pid 55523] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Mon Dec 02 01:09:04.424991 2024] [mpm_prefork:notice] [pid 55523] AH00169: caught SIGTERM, shutting down
+[Mon Dec 02 01:09:38.979033 2024] [ssl:warn] [pid 62401] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Dec 02 01:09:38.979693 2024] [ssl:warn] [pid 62401] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 02 01:09:39.109789 2024] [ssl:warn] [pid 62402] AH01906: www.example.com:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Dec 02 01:09:39.110008 2024] [ssl:warn] [pid 62402] AH01909: www.example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Dec 02 01:09:39.110180 2024] [lbmethod_heartbeat:notice] [pid 62402] AH02282: No slotmem from mod_heartmonitor
+[Mon Dec 02 01:09:39.158695 2024] [mpm_prefork:notice] [pid 62402] AH00163: Apache/2.4.56 (Unix) OpenSSL/1.1.1t PHP/8.0.28 mod_perl/2.0.12 Perl/v5.34.1 configured -- resuming normal operations
+[Mon Dec 02 01:09:39.158751 2024] [core:notice] [pid 62402] AH00094: Command line: '/Applications/XAMPP/xamppfiles/bin/httpd -E /Applications/XAMPP/xamppfiles/logs/error_log -D SSL -D PHP'
+[Tue Dec 03 09:58:52.768993 2024] [mpm_prefork:notice] [pid 62402] AH00169: caught SIGTERM, shutting down

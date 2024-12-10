@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .chart-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deteksi Serangan dari File Log</h1>
+    <div class="chart-container">
+        <canvas id="attackChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="ipChart"></canvas>
+    </div>
+
+    <script>
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+
+                const attackCtx = document.getElementById('attackChart').getContext('2d');
+                new Chart(attackCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(data.attacks),
+                        datasets: [{
+                            label: 'Jumlah Serangan',
+                            data: Object.values(data.attacks),
+                            backgroundColor: ['red', 'orange', 'blue']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Jenis Serangan'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Jumlah'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                const ipCtx = document.getElementById('ipChart').getContext('2d');
+                new Chart(ipCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: Object.keys(data.top_ips),
+                        datasets: [{
+                            label: 'Top IPs',
+                            data: Object.values(data.top_ips),
+                            backgroundColor: [
+                                'red', 'orange', 'yellow', 'green', 'blue',
+                                'purple', 'pink', 'cyan', 'magenta', 'gray'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
